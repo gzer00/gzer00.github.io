@@ -396,4 +396,194 @@
 
             <h3 style="margin-top: 12px;">자격증</h3>
             <div class="pill-row">
-              <span class="pill highlight-pill"
+              <span class="pill highlight-pill">SQLD (SQL 개발자)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 프로젝트 -->
+      <section id="projects">
+        <h2>프로젝트</h2>
+        <p class="section-caption">
+          수업 과제도 단순 결과물이 아니라, 설계·실험·분석까지 했던 것 위주로 정리했습니다.
+        </p>
+
+        <div class="project-list">
+          <!-- SSAFY 꽃 주문 제작 앱 -->
+          <article class="project-card">
+            <h3>꽃 주문 제작 앱 (SSAFY 모바일 트랙)</h3>
+            <div class="project-meta">
+              Java, Spring, SQL, Android(Kotlin) · 팀 프로젝트 · 진행 중
+            </div>
+            <div class="project-desc">
+              <ul>
+                <li>SSAFY 모바일 트랙에서 진행 중인 팀 프로젝트로, 사용자가 원하는 꽃 종류·색상·예산 등을 선택해 주문 요청을 남길 수 있는 서비스</li>
+                <li>Java + Spring 기반으로 주문·회원 관련 API를 설계하고, SQL로 테이블 스키마를 설계하며 백엔드 로직 구현 중</li>
+                <li>Android(Kotlin)로 주문 목록, 상세, 주문 생성 화면을 구성하고, REST API 연동을 통해 실제 동작하는 앱으로 발전시키는 것을 목표로 함</li>
+                <li>요구사항 정의, ERD 작성, API 명세서 작성까지 경험하며 모바일·백엔드 전반의 흐름을 배우는 중</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- S32K144 LED 리듬게임 -->
+          <article class="project-card">
+            <h3>S32K144 보드 기반 LED 리듬 게임</h3>
+            <div class="project-meta">
+              C, S32K144, ADC, UART, 7-Segment, DC 모터 · 텀프로젝트
+            </div>
+            <div class="project-desc">
+              <ul>
+                <li>S32K144 보드와 LED, 스위치, 가변저항, 7-Segment, DC 모터를 이용해 순발력 리듬 게임 설계</li>
+                <li>가변저항을 ADC로 읽어 목표 점수를 설정하고, LED가 랜덤으로 켜질 때 매칭되는 스위치를 제한 시간 내에 누르면 점수를 올리는 구조</li>
+                <li>7-Segment로 현재 점수와 목표 점수를 실시간 표시하고, UART로 "O" / "X" 및 "Game Clear :D"와 같은 디버깅 메시지 출력</li>
+                <li>목표 점수 달성 시 DC 모터를 회전시켜 물리적인 피드백을 제공하고, 게임 루프를 다시 초기화해 반복 플레이 가능하도록 구현</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- 실시간 음성 인식 -->
+          <article class="project-card">
+            <h3>라즈베리파이 실시간 음성 인식 · ONNX 모델 최적화</h3>
+            <div class="project-meta">
+              Python, ONNX Runtime, PyAudio, NumPy, Matplotlib · Raspberry Pi 4
+            </div>
+            <div class="project-desc">
+              <ul>
+                <li>라즈베리파이에서 USB 마이크를 통해 1초 오디오를 실시간 수집하고, ONNX 음성 모델로 특정 키워드를 감지하는 시스템 구현</li>
+                <li>80ms 단위 chunk + 600ms 버퍼를 사용하는 슬라이딩 윈도우 구조로, 실시간성을 유지하면서 예측 안정성 확보</li>
+                <li>deque 기반 버퍼 vs NumPy 배열 기반 버퍼를 각각 구현하여 평균 처리 시간 비교, NumPy 버전에서 약 30ms 수준까지 단축</li>
+                <li>실시간 음성 파형과 prediction 값을 그래프로 시각화하고, 감지 결과와 처리 시간을 CSV로 기록해 실험 데이터 자동 수집</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Custom malloc / Defragmentation -->
+          <article class="project-card">
+            <h3>Custom malloc & 메모리 단편화 해소 알고리즘 구현</h3>
+            <div class="project-meta">
+              C, 임베디드 시스템 프로그래밍
+            </div>
+            <div class="project-desc">
+              <ul>
+                <li>고정된 힙 영역을 두고, pool 구조체 배열을 이용해 주소·바이트 수·free 여부를 관리하는 <code>my_malloc</code>, <code>my_free</code>, <code>defragmentation</code>, <code>print_info</code> 함수 구현</li>
+                <li>defragmentation 함수로 사용 중인 블록을 앞으로 당겨 파편화된 영역을 압축하고, <code>next_address</code>를 갱신해 이후 할당 효율 향상</li>
+                <li>추가로 free된 블록을 크기별 linked list(<code>free_list</code>)로 관리해, 같은 크기 요청이 들어오면 중간 빈 블록을 재사용하도록 개선</li>
+                <li>여러 단계의 malloc/free 시나리오를 구성해, 특정 포인터가 이전에 해제된 블록에 다시 할당되는지 주소 레벨에서 확인</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Safe & Fast custom malloc -->
+          <article class="project-card">
+            <h3>Safe & Fast malloc 구현 및 성능 분석</h3>
+            <div class="project-meta">
+              C, Windows, 성능 측정 실험
+            </div>
+            <div class="project-desc">
+              <ul>
+                <li>주소, 바이트 수, 참조 횟수, free 여부를 담는 구조체 배열 기반의 <code>safe_malloc</code>, <code>safe_free</code> 설계</li>
+                <li>실제 free 대신 virtual free로 표시하고, 참조 횟수가 0이 될 때만 해제 가능하게 만들어 잘못된 free를 방지</li>
+                <li>linked list 기반 free list 버전과 기본 버전을 구현해, 기존 <code>malloc/free</code>와 실행 시간·메모리 사용량을 단계별로 비교</li>
+                <li>할당/해제 패턴에 따른 성능 차이를 그래프로 분석하고, 안정성과 성능 사이 트레이드오프 정리</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- OS Programming Series -->
+          <article class="project-card">
+            <h3>운영체제 · 시스템 프로그래밍 과제 시리즈</h3>
+            <div class="project-meta">
+              C, Linux, Socket, IPC, pthread, Device Driver
+            </div>
+            <div class="project-desc">
+              <ul>
+                <li>Linked List Duck Manager  
+                  – 최대 5마리 오리 정보를 linked list로 관리하는 프로그램 구현  
+                  – 헤더 파일 분리, include guard 추가로 중복 정의 오류 해결하며 Linux 빌드 환경에 익숙해짐
+                </li>
+                <li>Custom Shell  
+                  – <code>myshell &gt;</code> 프롬프트에서 사용자가 입력한 명령을 파싱해 <code>sum</code>, <code>sub</code>는 직접 계산, 그 외는 <code>fork</code> + <code>execvp</code>로 리눅스 기본 명령 실행  
+                  – <code>wait()</code>, <code>strtok()</code>, 헤더 누락 문제를 디버깅하며 프로세스 생성 흐름 이해
+                </li>
+                <li>2인 숫자 게임 서버  
+                  – Socket API와 IPC, mutex를 활용해 2명의 클라이언트가 숫자를 제시하고, 더 큰 숫자를 낸 클라이언트를 win/lose/tie로 판정  
+                  – 뮤텍스로 클라이언트 수 증가 구간을 보호해 동기화 문제 해결
+                </li>
+                <li>문자 디바이스 드라이버  
+                  – user mode 앱에서 write로 문자열을 보내면, kernel module에서 대소문자를 반전 후 read로 다시 전달  
+                  – <code>copy_from_user</code>, <code>copy_to_user</code>, <code>printk</code> 등을 사용하며 user–kernel 간 데이터 흐름 경험
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 활동 -->
+      <section id="experience">
+        <h2>학내·외 활동</h2>
+        <p class="section-caption">
+          이론으로 배운 내용을 실제 환경에 적용해 보려고, 교육·스터디·프로젝트를 꾸준히 해오고 있습니다.
+        </p>
+
+        <div class="experience-list">
+          <div class="experience-item">
+            <div class="experience-title">SSAFY 모바일 트랙 수강</div>
+            <div class="experience-meta">Java · SQL · Spring · Kotlin · Android</div>
+            <div class="experience-body">
+              자바 기초부터 객체지향, JDBC, 스프링 기반 백엔드, 안드로이드 앱까지 커리큘럼을 따라 학습 중입니다.
+              팀으로 꽃 주문 제작 앱을 개발하며 요구사항 정의, DB 설계, API 설계, 화면 설계까지 경험하고 있습니다.
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-title">임베디드 시스템 텀프로젝트 – LED 리듬 게임</div>
+            <div class="experience-meta">S32K144 · 팀 프로젝트</div>
+            <div class="experience-body">
+              팀원들과 역할을 나누어 S32K144 보드 하드웨어 구성, 게임 로직 설계, 디버깅을 진행했습니다.
+              저는 특히 ADC 입력 처리와 게임 점수 계산, UART 디버깅 메시지 출력 부분을 담당하며
+              보드 레지스터 설정과 주변장치 제어에 대한 이해를 높였습니다.
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-title">임베디드 / 라즈베리파이 실습</div>
+            <div class="experience-meta">Raspberry Pi · Python · OpenCV</div>
+            <div class="experience-body">
+              라즈베리파이로 실시간 음성 인식, 간단한 영상 처리 및 서버 연동 등을 구현해 보며
+              센서·보드·소프트웨어를 하나의 흐름으로 연결하는 연습을 했습니다.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <p class="section-caption">
+          협업 제안, 프로젝트 문의, 코드 관련 질문 환영합니다.
+        </p>
+        <div class="contact-row">
+          <div class="contact-item">
+            📧 이메일: <span>milaspar1217@naver.com</span>
+          </div>
+          <div class="contact-item">
+            🔗 GitHub: <span>github.com/gzer00</span>
+          </div>
+        </div>
+        <p style="font-size: 12px; color: #777; margin-top: 10px;">
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer>
+    © <span id="year"></span> Kang Jiyeong. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
