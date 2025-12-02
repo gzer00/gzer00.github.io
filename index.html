@@ -5,572 +5,152 @@
   <title>강지영 | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
-    :root {
-      --bg: #f5f6fa;
-      --card: #ffffff;
-      --text-main: #222222;
-      --text-sub: #666666;
-      --accent: #4f7cff;
-      --accent-soft: #ecf1ff;
-      --border: #e1e4ee;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --shadow: 0 14px 35px rgba(15, 23, 42, 0.08);
-      --max-width: 920px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo",
-                   "Noto Sans KR", sans-serif;
-      background: radial-gradient(circle at top, #ebf0ff 0, #f5f6fa 45%, #ffffff 100%);
-      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+      max-width: 820px;
+      margin: 40px auto;
+      padding: 0 16px 40px;
       line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .page {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      padding: 20px 18px 50px;
-    }
-
-    /* ---------- NAV ---------- */
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(12px);
-      background: linear-gradient(to bottom, rgba(245,246,250,0.95), rgba(245,246,250,0.6));
-      border-bottom: 1px solid rgba(209,213,219,0.6);
-      margin: -20px -18px 22px;
-      padding: 12px 18px;
-    }
-
-    .nav-inner {
-      max-width: var(--max-width);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .nav-logo {
-      font-weight: 700;
-      font-size: 16px;
-      letter-spacing: 0.03em;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .nav-logo-mark {
-      width: 20px;
-      height: 20px;
-      border-radius: 40%;
-      background: linear-gradient(135deg, #4f7cff, #8f9bff);
-    }
-
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 13px;
-    }
-
-    .nav-links a {
-      padding: 4px 10px;
-      border-radius: 999px;
-      color: #4b5563;
-    }
-
-    .nav-links a:hover {
-      background: #e5e7f5;
-      color: var(--accent);
-    }
-
-    /* ---------- HERO ---------- */
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
-      gap: 24px;
-      align-items: center;
-      margin-bottom: 24px;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .hero-main {
-      padding: 20px 22px;
-      background: var(--card);
-      box-shadow: var(--shadow);
-      border-radius: 22px;
-      border: 1px solid var(--border);
-    }
-
-    .avatar {
-      width: 60px;
-      height: 60px;
-      border-radius: 24px;
-      background: #111827;
-      color: #e5e7eb;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    .hero-title {
-      font-size: 24px;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-
-    .hero-subtitle {
-      font-size: 14px;
-      color: var(--text-sub);
-      margin-bottom: 12px;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 12px;
-    }
-
-    .tag {
-      font-size: 11px;
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: #f3f4ff;
-      color: #374151;
-    }
-
-    .tag-strong {
-      background: #111827;
-      color: #f9fafb;
-      font-weight: 500;
-    }
-
-    .hero-text {
-      font-size: 13px;
-      color: #4b5563;
-    }
-
-    .hero-side {
-      display: grid;
-      gap: 12px;
-    }
-
-    .hero-card {
-      padding: 14px 16px;
-      background: rgba(17,24,39,0.96);
-      border-radius: 18px;
-      color: #e5e7eb;
-    }
-
-    .hero-card-title {
-      font-size: 13px;
-      opacity: 0.8;
-      margin-bottom: 4px;
-    }
-
-    .hero-card-main {
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
-
-    .hero-card-sub {
-      font-size: 12px;
-      opacity: 0.9;
-    }
-
-    .hero-card-light {
-      background: rgba(255,255,255,0.95);
       color: #111827;
-      border: 1px solid #e5e7f0;
-    }
-
-    /* ---------- SECTIONS ---------- */
-    section {
-      margin-bottom: 20px;
-      background: var(--card);
-      border-radius: var(--radius-lg);
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-      padding: 18px 18px 16px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 10px;
-      gap: 8px;
-    }
-
-    .section-title {
-      font-size: 16px;
-      font-weight: 600;
-    }
-
-    .section-caption {
-      font-size: 12px;
-      color: var(--text-sub);
-    }
-
-    /* ---------- SKILLS ---------- */
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px 16px;
-      font-size: 13px;
-    }
-
-    @media (max-width: 640px) {
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .skills-block-title {
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .chip {
-      font-size: 11px;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: #f3f4ff;
-      color: #4b5563;
-    }
-
-    .chip-strong {
-      background: #e0e7ff;
-      color: #1f2937;
-      font-weight: 500;
-    }
-
-    /* ---------- PROJECTS ---------- */
-    .projects-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    @media (max-width: 768px) {
-      .projects-list {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .project-card {
-      border-radius: var(--radius-md);
-      border: 1px solid #e5e7f0;
       background: #f9fafb;
-      padding: 10px 12px;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      margin: 0.4em 0 0.2em;
+    }
+    h1 { font-size: 26px; }
+    h2 { font-size: 20px; margin-top: 1.6em; }
+    h3 { font-size: 16px; margin-top: 1em; }
+    p { margin: 0.2em 0; }
+    ul { margin: 0.3em 0 0.5em 1.1em; padding: 0; }
+    li { margin: 0.15em 0; }
+    a { color: #2563eb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .nav {
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+    .nav a {
+      margin-right: 10px;
+    }
+    .tagline {
+      color: #4b5563;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    .sub {
+      color: #6b7280;
       font-size: 13px;
     }
-
-    .project-title {
-      font-size: 13px;
-      font-weight: 600;
-      margin-bottom: 2px;
-    }
-
-    .project-meta {
-      font-size: 11px;
-      color: var(--text-sub);
-      margin-bottom: 5px;
-    }
-
-    .project-card ul {
-      margin-left: 14px;
-    }
-
-    .project-card li {
-      margin-bottom: 2px;
-    }
-
-    /* ---------- EDUCATION / ETC ---------- */
-    .edu-grid {
-      display: grid;
-      grid-template-columns: 2fr 1.3fr;
-      gap: 12px;
+    .small {
       font-size: 13px;
     }
-
-    @media (max-width: 768px) {
-      .edu-grid {
-        grid-template-columns: 1fr;
-      }
+    hr {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 18px 0;
     }
-
-    .edu-item-title {
-      font-weight: 500;
-    }
-
-    .edu-item-sub {
-      font-size: 12px;
-      color: var(--text-sub);
-      margin-bottom: 3px;
-    }
-
-    /* ---------- CONTACT ---------- */
-    .contact-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      font-size: 13px;
-    }
-
-    .contact-pill {
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: #f3f4ff;
-      border: 1px dashed #d4d7f0;
-    }
-
     footer {
-      max-width: var(--max-width);
-      margin: 12px auto 30px;
-      padding: 0 18px;
-      font-size: 11px;
+      margin-top: 26px;
+      font-size: 12px;
       color: #9ca3af;
-      text-align: center;
     }
   </style>
 </head>
 <body>
-  <div class="nav">
-    <div class="nav-inner">
-      <div class="nav-logo">
-        <div class="nav-logo-mark"></div>
-        <span>강지영 · Portfolio</span>
-      </div>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#edu">Education</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </div>
 
-  <div class="page">
-    <!-- HERO -->
-    <section class="hero" id="about">
-      <div class="hero-main">
-        <div class="avatar">KJ</div>
-        <h1 class="hero-title">임베디드 & 모바일 개발자 강지영</h1>
-        <p class="hero-subtitle">
-          보드에서 돌아가는 코드와 사용자가 손에 쥐는 앱 사이를 잇는 개발자를 지향합니다.
-        </p>
-        <div class="hero-tags">
-          <span class="tag tag-strong">Embedded · System</span>
-          <span class="tag">Mobile (Android)</span>
-          <span class="tag">Backend (Spring)</span>
-        </div>
-        <p class="hero-text">
-          학부에서 C 기반 임베디드·운영체제 과제를 통해 메모리와 프로세스, 드라이버를 직접 구현해 봤습니다.
-          S32K144 보드로 리듬 게임을 만들며 하드웨어 제어를 익혔고,
-          현재는 SSAFY 모바일 트랙에서 Java·SQL·Spring·Kotlin을 사용해 꽃 주문 제작 앱을 개발하고 있습니다.
-        </p>
-      </div>
-      <div class="hero-side">
-        <div class="hero-card">
-          <div class="hero-card-title">현재</div>
-          <div class="hero-card-main">SSAFY 모바일 트랙 수강</div>
-          <div class="hero-card-sub">
-            Java · SQL · Spring · Kotlin 기반 꽃 주문 제작 앱 개발 중
-          </div>
-        </div>
-        <div class="hero-card hero-card-light">
-          <div class="hero-card-title">강점</div>
-          <div class="hero-card-main">저수준 이해 + 서비스 구현 경험</div>
-          <div class="hero-card-sub">
-            Custom malloc, 간단 셸, 디바이스 드라이버부터 라즈베리파이·모바일 앱까지 직접 구현해 본 경험
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- 이름 & 상단 네비 -->
+<h1 id="top">강지영</h1>
+<div class="tagline">임베디드 & 모바일 개발자</div>
 
-    <!-- SKILLS -->
-    <section id="skills">
-      <div class="section-header">
-        <h2 class="section-title">Skills</h2>
-        <p class="section-caption">실제로 과제나 프로젝트에 써 본 것 위주로 정리했습니다.</p>
-      </div>
-      <div class="skills-grid">
-        <div>
-          <div class="skills-block-title">Languages</div>
-          <div class="chips">
-            <span class="chip chip-strong">C</span>
-            <span class="chip chip-strong">Java</span>
-            <span class="chip">Python</span>
-            <span class="chip">Kotlin</span>
-            <span class="chip">C++ (기초)</span>
-          </div>
-        </div>
-        <div>
-          <div class="skills-block-title">Embedded / System</div>
-          <div class="chips">
-            <span class="chip chip-strong">S32K144</span>
-            <span class="chip">Raspberry Pi</span>
-            <span class="chip">Linux (gcc, gdb, make)</span>
-            <span class="chip">Socket / IPC / pthread</span>
-            <span class="chip">Custom malloc</span>
-            <span class="chip">Char Device Driver</span>
-          </div>
-        </div>
-        <div>
-          <div class="skills-block-title">Backend / Mobile</div>
-          <div class="chips">
-            <span class="chip chip-strong">Spring / Spring Boot (학습·프로젝트)</span>
-            <span class="chip">SQL · DB 설계</span>
-            <span class="chip">JPA 기초</span>
-            <span class="chip">Android (Kotlin)</span>
-            <span class="chip">REST API</span>
-          </div>
-        </div>
-        <div>
-          <div class="skills-block-title">Tools & Etc.</div>
-          <div class="chips">
-            <span class="chip">Git · GitHub</span>
-            <span class="chip">VS Code · IntelliJ</span>
-            <span class="chip">OpenCV</span>
-            <span class="chip">ROS (기초 사용)</span>
-            <span class="chip">ONNX Runtime</span>
-            <span class="chip">Flask</span>
-          </div>
-        </div>
-      </div>
-    </section>
+<div class="nav">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
+  <a href="#cert">Certificates</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-header">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-caption">각 프로젝트는 짧게 핵심만 정리했습니다.</p>
-      </div>
-      <div class="projects-list">
-        <!-- SSAFY 꽃 주문 제작 앱 -->
-        <div class="project-card">
-          <div class="project-title">꽃 주문 제작 앱 (SSAFY 모바일 트랙)</div>
-          <div class="project-meta">Java · Spring · SQL · Android(Kotlin) · 팀 프로젝트 · 진행 중</div>
-          <ul>
-            <li>사용자가 꽃 종류·색상·예산을 선택해 맞춤 주문을 남길 수 있는 서비스 개발</li>
-            <li>주문·회원 기능을 중심으로 API 설계 및 DB 스키마 설계, Android 화면과 연동</li>
-          </ul>
-        </div>
+<hr />
 
-        <!-- S32K144 리듬게임 -->
-        <div class="project-card">
-          <div class="project-title">S32K144 보드 기반 LED 리듬 게임</div>
-          <div class="project-meta">C · S32K144 · ADC · UART · 7-Segment · DC 모터</div>
-          <ul>
-            <li>랜덤으로 켜지는 LED에 맞춰 스위치를 누르면 점수가 오르는 리듬 게임 구현</li>
-            <li>가변저항으로 목표 점수 설정, 7-Segment로 점수 표시, 모터 회전으로 Game Clear 표현</li>
-          </ul>
-        </div>
+<!-- About -->
+<h2 id="about">안녕하세요, 강지영입니다.</h2>
+<p>보드에서 돌아가는 C 코드와 사용자가 손에 쥐는 모바일 서비스를 모두 경험해 보고 싶은 개발자입니다.</p>
+<p>학부에서는 임베디드·운영체제 과제를 통해 메모리, 프로세스, 드라이버를 직접 구현해봤고,</p>
+<p>지금은 SSAFY 모바일 트랙에서 <strong>Java · SQL · Spring · Kotlin</strong>으로 꽃 주문 제작 앱을 만들며 모바일·백엔드를 배우고 있습니다.</p>
 
-        <!-- 라즈베리파이 실시간 음성 인식 -->
-        <div class="project-card">
-          <div class="project-title">라즈베리파이 실시간 음성 인식</div>
-          <div class="project-meta">Python · ONNX Runtime · PyAudio · NumPy · Raspberry Pi 4</div>
-          <ul>
-            <li>USB 마이크로 1초 단위 오디오를 받아 키워드 감지 모델에 실시간 입력</li>
-            <li>deque vs NumPy 버퍼 구조를 나눠 구현하고 처리 시간 비교 실험 진행</li>
-          </ul>
-        </div>
+<!-- Skills -->
+<h2 id="skills">Skills</h2>
 
-        <!-- OS / System Programming -->
-        <div class="project-card">
-          <div class="project-title">운영체제 · 시스템 프로그래밍 과제 모음</div>
-          <div class="project-meta">C · Linux · Socket · Device Driver</div>
-          <ul>
-            <li>고정 힙 영역 기반 custom malloc / safe_malloc 설계 및 단편화 해소 알고리즘 구현</li>
-            <li>간단 셸, 2인 숫자 게임 서버, 문자 디바이스 드라이버 등으로 프로세스·커널 동작 이해</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<h3>Main Languages</h3>
+<p>Kotlin · Java · C · Python (기초) · C++ (기초)</p>
 
-    <!-- EDUCATION / CERT -->
-    <section id="edu">
-      <div class="section-header">
-        <h2 class="section-title">Education & Certificates</h2>
-        <p class="section-caption">학력과 최근 교육, 자격증입니다.</p>
-      </div>
-      <div class="edu-grid">
-        <div>
-          <div class="edu-item-title">경북대학교 전자공학부</div>
-          <div class="edu-item-sub">Embedded · System 관련 전공 과목 수강</div>
-          <p style="font-size: 13px;">
-            임베디드 시스템, 마이크로프로세서, 운영체제 과제를 수행하며 C 기반 저수준 프로그래밍 역량을 쌓았습니다.
-          </p>
-        </div>
-        <div>
-          <div class="edu-item-title">SSAFY 모바일 트랙</div>
-          <div class="edu-item-sub">Java · SQL · Spring · Kotlin · Android</div>
-          <p style="font-size: 13px; margin-bottom: 6px;">
-            모바일 트랙에서 Java 백엔드와 Android 앱 개발을 집중 학습하고 있습니다.
-          </p>
-          <div class="edu-item-title" style="margin-top: 4px;">Certificates</div>
-          <div class="edu-item-sub">SQLD (SQL 개발자) 취득</div>
-        </div>
-      </div>
-    </section>
+<h3>Embedded / System</h3>
+<p>S32K144 · Raspberry Pi · Linux(gcc, gdb, make) · Socket / IPC / pthread · Custom malloc · Char Device Driver</p>
 
-    <!-- CONTACT -->
-    <section id="contact">
-      <div class="section-header">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-caption">협업 제안, 프로젝트 관련 문의 환영합니다.</p>
-      </div>
-      <div class="contact-row">
-        <div class="contact-pill">
-          📧 이메일&nbsp;&nbsp;|&nbsp;&nbsp;milaspar1217@naver.com
-        </div>
-        <div class="contact-pill">
-          💻 GitHub&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://github.com/gzer00" target="_blank">github.com/gzer00</a>
-        </div>
-      </div>
-    </section>
-  </div>
+<h3>Backend / Mobile</h3>
+<p>Spring / Spring Boot(학습·프로젝트) · SQL · DB 설계 · Android(Kotlin) · REST API</p>
 
-  <footer>
-    © <span id="year"></span> Kang Jiyeong. All rights reserved.
-  </footer>
+<h3>Etc.</h3>
+<p>Git / GitHub · VS Code · IntelliJ · OpenCV · ONNX Runtime · Flask · ROS(기초 사용 가능)</p>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<!-- Education -->
+<h2 id="education">Education</h2>
+
+<h3>경북대학교 전자공학부</h3>
+<p class="sub">Embedded / System 관련 전공 과목 수강</p>
+<p class="small">임베디드 시스템, 마이크로프로세서, 운영체제 과제를 통해 C 기반 시스템 프로그래밍을 학습했습니다.</p>
+
+<h3>SSAFY 모바일 트랙</h3>
+<p class="sub">Java · SQL · Spring · Kotlin · Android</p>
+<p class="small">모바일 트랙에서 팀으로 꽃 주문 제작 앱을 개발하며 백엔드와 안드로이드를 함께 경험하고 있습니다.</p>
+
+<!-- Certificates -->
+<h2 id="cert">Certificates</h2>
+<ul>
+  <li>SQLD (SQL 개발자)</li>
+</ul>
+
+<!-- Projects -->
+<h2 id="projects">Projects</h2>
+
+<h3>꽃 주문 제작 앱 (SSAFY 모바일 트랙)</h3>
+<p class="sub">Java · Spring · SQL · Android(Kotlin) · 팀 프로젝트 · 진행 중</p>
+<ul>
+  <li>사용자가 꽃 종류·색상·예산을 선택해 주문 요청을 남길 수 있는 서비스 개발</li>
+  <li>주문·회원 중심 API 설계, DB 스키마 설계, Android 화면과 REST API 연동</li>
+</ul>
+
+<h3>S32K144 보드 기반 LED 리듬 게임</h3>
+<p class="sub">C · S32K144 · ADC · UART · 7-Segment · DC 모터</p>
+<ul>
+  <li>랜덤으로 켜지는 LED 패턴에 맞춰 스위치를 누르면 점수가 올라가는 리듬 게임 구현</li>
+  <li>가변저항으로 목표 점수를 설정하고, 7-Segment로 점수·목표를 표시, 모터 회전으로 Game Clear 표현</li>
+</ul>
+
+<h3>라즈베리파이 실시간 음성 인식</h3>
+<p class="sub">Python · ONNX Runtime · PyAudio · NumPy · Raspberry Pi</p>
+<ul>
+  <li>USB 마이크로 1초 단위 오디오를 받아 ONNX 모델로 키워드 감지</li>
+  <li>버퍼 구조(Deque vs NumPy)를 나눠 구현해 처리 시간 비교</li>
+</ul>
+
+<h3>운영체제 · 시스템 프로그래밍 과제 모음</h3>
+<p class="sub">C · Linux · Socket · Device Driver</p>
+<ul>
+  <li>고정 힙 영역 기반 custom malloc / safe_malloc 구현 및 단편화 해소 로직 작성</li>
+  <li>간단 셸, 2인 숫자 게임 서버, 문자 디바이스 드라이버 구현으로 프로세스·커널 동작 이해</li>
+</ul>
+
+<!-- Contact -->
+<h2 id="contact">Contact</h2>
+<p>Email: <a href="mailto:milaspar1217@naver.com">milaspar1217@naver.com</a></p>
+<p>GitHub: <a href="https://github.com/gzer00" target="_blank">https://github.com/gzer00</a></p>
+
+<footer>
+  © <script>document.write(new Date().getFullYear());</script> Kang Jiyeong. All rights reserved.
+</footer>
+
 </body>
 </html>
